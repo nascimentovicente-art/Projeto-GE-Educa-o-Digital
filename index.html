@@ -1,11 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog</title>
+    <style>
+        header {
+            background-color: #0d5007;
+            color: #FFFFFF;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 16px;
+            border: 5px solid #000000;
+        }
+
+        main {
+            background-color: #FFFFFF;
+            color: #0d5007;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            
+        }
+        article{
+            display: flex;
+
+        }
+        img {
+            width: 180px;
+            height: 180px;
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <header>
+        <h1>Curiosidades sobre o futebol</h1>
+        <p>Histórias bizarras, recordes absurdos e o lado oculto do futebol que você nunca viu na TV.</p>
+    </header>
+    <main>
+        <article>
+            <img src="imagem1.png"
+                alt="Ilustração minimalista de um checklist de rotina com marcações de tarefas concluídas.">
+            <div>
+                <h2>O poder do Rei do Futebol</h2>
+                <p class="artigo-autor">Por: Vicente Rogal</p>
+                <p>Em 1969, o Santos de Pelé viajou para a Nigéria para jogar uma partida amistosa. O impacto da presença do craque foi tão grande que as facções rivais da Guerra de Biafra assinaram um cessar-fogo de 48 horas apenas para que todos pudessem assistir ao jogo em paz.</p>
+                <button>❤️ <span>0</span> </button>
+                <button>👎​ <span>0</span> </button>
+            </div>
+
+        </article>
+        <article>
+            <img src="imagem1.png"
+                alt="Ilustração minimalista de um checklist de rotina com marcações de tarefas concluídas.">
+            <div>
+                <h2>36 cartões vermelhos em um só jogo</h2>
+                <p class="artigo-autor">Por: Vicente Rogal</p>
+                <p>O recorde mundial de expulsões pertence a uma partida da quinta divisão argentina em 2011, entre Claypole e Victoriano Arenas. Após uma briga generalizada, o árbitro Damián Rubino expulsou todos os 22 jogadores titulares e os 14 reservas.</p>
+                <button>❤️ <span>0</span> </button>
+                <button>👎​ <span>0</span> </button>
+            </div>
+
+        </article>
+    </main>
 </body>
+<script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach(function (botao) {
+        let curtiu = false;
+        botao.addEventListener("click", botaoClicado);
+        function botaoClicado() {
+            console.log("fui clicado");
+            let texto = botao.querySelector("span");
+            if (curtiu === false){
+                texto.textContent++;
+                curtiu = true;
+            } else {
+                texto.textContent--;
+                curtiu = false;
+            }
+            
+        }
+    })
+
+
+</script>
+
 </html>
